@@ -113,6 +113,7 @@ const validateSubmit = (event) => {
 
 const addStudent = (e) => {
 	e.preventDefault();
+	$("#submitBtn").prop("disabled", true);
 	const fullName = $("#fullName").val();
 	const firstName = $("#firstName").val();
 	const lastName = $("#lastName").val();
@@ -146,6 +147,8 @@ const addStudent = (e) => {
 					'error'
 				);
 			}
+		
+			$("#submitBtn").prop("disabled", false);
 		}
 	});
 };
