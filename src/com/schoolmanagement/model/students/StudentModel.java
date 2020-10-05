@@ -81,4 +81,26 @@ public class StudentModel {
 		return students;
 		
 	}
+	
+	public static boolean changeStudentStatus(int id, int status) {
+		Connection connection = DataAccess.connect();
+		//sql
+		String sqlUpdate = "update student_details set status=? where id=?";
+		
+		//execute
+		try {
+			//ps
+			PreparedStatement psUpdate= (PreparedStatement)connection.prepareStatement(sqlUpdate);
+			psUpdate.setInt(1, status);
+			psUpdate.setInt(2, id);
+			psUpdate.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return true;
+	}
 }

@@ -1,3 +1,5 @@
+<script src="../../js/sweetalert2/sweetalert2.all.js"></script>
+
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Brand -->

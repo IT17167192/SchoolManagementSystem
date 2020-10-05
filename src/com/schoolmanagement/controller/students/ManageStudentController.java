@@ -43,12 +43,25 @@ public class ManageStudentController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("application/json");
-		PrintWriter out = response.getWriter();
-		Gson json = new Gson();
-		ArrayList<Student> students = StudentModel.retrieveAllUsers();
-		out.print(json.toJson(students));
-		out.flush();
-		out.close();
+		String action = request.getParameter("action");
+		
+		if(action.equalsIgnoreCase("get")) {
+			PrintWriter out = response.getWriter();
+			Gson json = new Gson();
+			ArrayList<Student> students = StudentModel.retrieveAllUsers();
+			out.print(json.toJson(students));
+			out.flush();
+			out.close();			
+		}else if(action.equalsIgnoreCase("update")) {
+			int id = Integer.parseInt(request.getParameter("id"));
+			int status = Integer.parseInt(request.getParameter("status")) == 1 ? 0: 1;
+			boolean state = StudentModel.changeStudentStatus(id, status);
+			PrintWriter out = response.getWriter();
+			Gson json = new Gson();
+			out.print(json.toJson(state));
+			out.flush();
+			out.close();
+		}
 	}
 
 }
