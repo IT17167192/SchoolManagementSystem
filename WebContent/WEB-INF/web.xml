@@ -5,11 +5,20 @@
 	id="WebApp_ID" version="4.0">
 	<servlet>
 		<servlet-name>studentAdd</servlet-name>
-		<servlet-class>com.schoolmanagement.controller.students.StudentController</servlet-class>
+		<servlet-class>com.schoolmanagement.controller.students.AddStudentController</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>studentAdd</servlet-name>
 		<url-pattern>/addStudent</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>studentManage</servlet-name>
+		<servlet-class>com.schoolmanagement.controller.students.ManageStudentController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>studentManage</servlet-name>
+		<url-pattern>/manageStudent</url-pattern>
 	</servlet-mapping>
 </web-app>

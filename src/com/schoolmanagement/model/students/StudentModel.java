@@ -41,4 +41,44 @@ public class StudentModel {
 		return i;
 		
 	}
+	
+	public static ArrayList<Student> retrieveAllUsers(){
+		ArrayList<Student> students = new ArrayList<>();
+		Student student = null;
+		
+		Connection con = DataAccess.connect();
+		String sql = "select * from student_details";
+		
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			
+			ResultSet resultset = ps.executeQuery();
+			
+			while(resultset.next()) {
+				student = new Student();
+				
+				student.setId(resultset.getInt("id"));
+				student.setFullName(resultset.getString("fullName"));
+				student.setFirstName(resultset.getString("firstName"));
+				student.setLastName(resultset.getString("lastName"));
+				student.setDob(resultset.getString("dob"));
+				student.setGender(resultset.getString("gender"));
+				student.setAddress(resultset.getString("address"));
+				student.setGuardianName(resultset.getString("guardianName"));
+				student.setCno(resultset.getString("contactNo"));
+				student.setOccupation(resultset.getString("occupation"));
+				student.setAdmissionDate(resultset.getString("admissionDate"));
+				student.setAddmissionNo(resultset.getString("admissionNo"));
+				student.setStatus(resultset.getInt("status"));
+				
+				students.add(student);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		
+		return students;
+		
+	}
 }

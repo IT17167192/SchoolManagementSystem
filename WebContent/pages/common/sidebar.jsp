@@ -29,7 +29,7 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item active" href="/SchoolManagementSystem/pages/students/addStudent.jsp">Add Students</a>
-                            <a class="collapse-item" href="cards.html">View All Student Details</a>
+                            <a class="collapse-item" href="/SchoolManagementSystem/pages/students/manageStudent.jsp">View All Student Details</a>
                         </div>
                     </div>
                 </li>
