@@ -129,7 +129,7 @@
                                 <input type="text" id="admissionNo" name="admissionNo" class="form-control form-control-user" id="exampleInputEmail" placeholder="Admission Number">
                             </div>
                             
-                            <input type="submit" id="submitBtn" onclick="addStudent(event)" class="btn btn-primary btn-user btn-block" value="Save Student">
+                            <input type="submit" id="submitBtn" onclick="validateSubmit(event)" class="btn btn-primary btn-user btn-block" value="Save Student">
                             <hr>
                         </form>
 
