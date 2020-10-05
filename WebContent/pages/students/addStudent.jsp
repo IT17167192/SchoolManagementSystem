@@ -70,7 +70,7 @@
 
                         <h1 class="h3 mb-4 text-gray-800">Add Student Details</h1>
 
-                        <form action="/SchoolManagementSystem/addStudent" method="post" class="user">
+                        <form action="/SchoolManagementSystem/addStudent" name="addStudentForm" method="post" onSubmit="return validateSubmit(event);" class="user">
                             <div class="form-group">
                                 <label>Full Name</label>
                                 <input type="text" id="fullName" name="fullName" class="form-control form-control-user" id="exampleInputEmail" placeholder="Full Name">

@@ -1,4 +1,5 @@
 $(function() {
+	$("#fullName").focus().select();
 	//enter key press event
 	$(document).keypress(function (e) {
 		if (e.which === 13) {
@@ -39,7 +40,73 @@ $(function() {
 				if (validateRequired('addmissionDate')) {
 					$("#admissionNo").focus().select();					
 				}
+			}else if(e.target.id === 'admissionNo'){
+				if (validateRequired('admissionNo')) {
+					validateSubmit(e);					
+				}
 			}
 		}
 	});
 });
+
+const validateSubmit = (event) => {
+	event.preventDefault();
+	console.log("Validate began");
+	let err = 0;
+	
+	if(!validateRequired('fullName')){
+		validateRequired('fullName');
+		err++;
+	}
+	
+	if(!validateRequired('firstName')){
+		validateRequired('firstName');
+		err++;
+	}
+	
+	if(!validateRequired('lastName')){
+		validateRequired('lastName');
+		err++;
+	}
+	
+	if(!validateRequired('dob')){
+		validateRequired('dob');
+		err++;
+	}
+	
+	if(!validateRequired('address')){
+		validateRequired('address');
+		err++;
+	}
+	
+	if(!validateRequired('guardian')){
+		validateRequired('guardian');
+		err++;
+	}
+	
+	if(!validateRequired('cNumber')){
+		validateRequired('cNumber');
+		err++;
+	}
+	
+	if(!validateRequired('occupation')){
+		validateRequired('occupation');
+		err++;
+	}
+	
+	if(!validateRequired('addmissionDate')){
+		validateRequired('addmissionDate');
+		err++;
+	}
+	
+	if(!validateRequired('admissionNo')){
+		validateRequired('admissionNo');
+		err++;
+	}
+	
+	if(err == 0){
+		 document.addStudentForm.submit();
+	}else{
+		return false;
+	}
+}
