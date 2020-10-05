@@ -105,8 +105,51 @@ const validateSubmit = (event) => {
 	}
 	
 	if(err == 0){
-		 document.addStudentForm.submit();
+		 addStudent(event);
 	}else{
 		return false;
 	}
 }
+
+const addStudent = (e) => {
+	e.preventDefault();
+	const fullName = $("#fullName").val();
+	const firstName = $("#firstName").val();
+	const lastName = $("#lastName").val();
+	const gender = $("#gender").val();
+	const dob = $("#dob").val();
+	const address = $("#address").val();
+	const guardian = $("#guardian").val();
+	const cNumber = $("#cNumber").val();
+	const occupation = $("#occupation").val();
+	const addmissionDate = $("#addmissionDate").val();
+	const admissionNo = $("#admissionNo").val();
+	
+	$.ajax({
+		type: "POST",
+		url: "/SchoolManagementSystem/addStudent?fullName="+fullName+"&firstName="+firstName+"&lastName="+lastName
+		+"&gender="+gender+"&dob="+dob+"&address="+address+"&guardian="+guardian+"&cNumber="+cNumber
+		+"&occupation="+occupation+"&addmissionDate="+addmissionDate+"&admissionNo="+admissionNo,
+		success: function (data) {
+			console.log(data);
+			if(data){
+				Swal.fire(
+					'Successful!',
+					'Student Details Saved!',
+					'success'
+				);
+				clearForm();
+			}else{
+				Swal.fire(
+					'Error!',
+					'Unable to save!',
+					'error'
+				);
+			}
+		}
+	});
+};
+
+const clearForm = () => {
+	$("#addStudentForm").trigger('reset');
+};

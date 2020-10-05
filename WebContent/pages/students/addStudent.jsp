@@ -69,8 +69,8 @@
                     <div class="container-fluid">
 
                         <h1 class="h3 mb-4 text-gray-800">Add Student Details</h1>
-
-                        <form action="/SchoolManagementSystem/addStudent" name="addStudentForm" method="post" onSubmit="return validateSubmit(event);" class="user">
+						<!-- action="/SchoolManagementSystem/addStudent" name="addStudentForm" method="post" onSubmit="return validateSubmit(event);" -->
+                        <form class="user" id="addStudentForm">
                             <div class="form-group">
                                 <label>Full Name</label>
                                 <input type="text" id="fullName" name="fullName" class="form-control form-control-user" id="exampleInputEmail" placeholder="Full Name">
@@ -129,7 +129,7 @@
                                 <input type="text" id="admissionNo" name="admissionNo" class="form-control form-control-user" id="exampleInputEmail" placeholder="Admission Number">
                             </div>
                             
-                            <input type="submit" class="btn btn-primary btn-user btn-block" value="Save Student">
+                            <input type="submit" onclick="addStudent(event)" class="btn btn-primary btn-user btn-block" value="Save Student">
                             <hr>
                         </form>
 

@@ -2,6 +2,7 @@ package com.schoolmanagement.controller.students;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
 import com.schoolmanagement.model.students.Student;
 import com.schoolmanagement.model.students.StudentModel;
 
@@ -47,7 +49,7 @@ public class AddStudentController extends HttpServlet {
 		student.setFullName(request.getParameter("fullName"));
 		student.setFirstName(request.getParameter("firstName"));
 		student.setLastName(request.getParameter("lastName"));
-		student.setGender(request.getParameter("lastName") == "1" ? "Male": "Female");
+		student.setGender(request.getParameter("gender") == "1" ? "Male": "Female");
 		student.setDob(request.getParameter("dob"));
 		student.setAddress(request.getParameter("address"));
 		student.setGuardianName(request.getParameter("guardian"));
@@ -56,14 +58,23 @@ public class AddStudentController extends HttpServlet {
 		student.setAdmissionDate(request.getParameter("addmissionDate"));
 		student.setAddmissionNo(request.getParameter("admissionNo"));
 		
-		RequestDispatcher dispatcher =getServletContext().getRequestDispatcher("/pages/students/addStudent.jsp");
-		
 		int state = StudentModel.registerStudent(student);
+		
+		boolean responseStatus = true;
+		PrintWriter out = response.getWriter();
+		Gson json = new Gson();
+		
 		if(state!= 0) {
 			System.out.println("Succesfully Inserted!");
-			dispatcher.forward(request, response);
+			out.print(json.toJson(responseStatus));
+			out.flush();
+			out.close();
 		}else {
 			System.out.println("Error in Insert!");
+			responseStatus = false;
+			out.print(json.toJson(responseStatus));
+			out.flush();
+			out.close();
 		}
 		
 		doGet(request, response);
