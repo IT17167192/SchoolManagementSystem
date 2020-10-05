@@ -34,7 +34,7 @@ const addRow = (item) => {
 	if(item.status == 1){
 		statusBadge = '<span class="badge badge-success">Active</span>'
 	}else{
-		statusBadge = '<span class="badge badge-danger">Active</span>'
+		statusBadge = '<span class="badge badge-danger">Inactive</span>'
 	}
 	
 	let row = '<tr id="' + item.id + '">'
