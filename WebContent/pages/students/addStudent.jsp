@@ -187,8 +187,6 @@
 
         <!-- Custom scripts for all pages-->
         <script src="../../js/sb-admin-2.min.js"></script>
-        
-        <script src="../../js/custom/validation.js"></script>
         <script src="../../js/custom/students/addStudent.js"></script>
 
     </body>

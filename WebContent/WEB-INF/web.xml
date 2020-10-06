@@ -12,6 +12,7 @@
 		<servlet-name>studentAdd</servlet-name>
 		<url-pattern>/addStudent</url-pattern>
 	</servlet-mapping>
+	
 	<servlet>
 		<servlet-name>studentManage</servlet-name>
 		<servlet-class>com.schoolmanagement.controller.students.ManageStudentController</servlet-class>
@@ -20,5 +21,15 @@
 	<servlet-mapping>
 		<servlet-name>studentManage</servlet-name>
 		<url-pattern>/manageStudent</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>addTeacher</servlet-name>
+		<servlet-class>com.schoolmanagement.controller.teachers.AddTeacherController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>addTeacher</servlet-name>
+		<url-pattern>/addTeacher</url-pattern>
 	</servlet-mapping>
 </web-app>

@@ -1,17 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Teacher</title>
+<title>Student History</title>
 <!-- Custom fonts for this template-->
-        <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-        <link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
-        <link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
-        <!-- Custom styles for this template-->
-        <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
+<link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+<link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+<link rel="stylesheet"
+	href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+<!-- Custom styles for this template-->
+<link href="../../css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 <body id="page-top">
 
@@ -67,68 +71,45 @@
 
                     <div class="container-fluid">
 
-                        <h1 class="h3 mb-4 text-gray-800">Add Teacher Details</h1>
+                        <h1 class="h3 mb-4 text-gray-800">Student History</h1>
 
-                        <form class="user" id="addTeacherForm">
-                        	<div class="form-group">
-                                <span id="newId" class="badge badge-success"></span>
-                                <input type="hidden" id="nextId">
-                            </div>
+                        <form class="user">
+                           
                             
                             <div class="form-group">
-                                <label>Full Name</label>
-                                <input type="text" id="fullName" class="form-control form-control-user" placeholder="Full Name">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Select Gender</label>
-                                <select id="gender" class="form-control">
-                                    <option value="1">Male</option>
-                                    <option value="2">Female</option>
+                                <label>Choose Student</label>
+                                <select class="form-control select2">
+                                    <option>IT17180276-Janith Sameera</option>
+                                    <option>IT16178266-Maduka Dilshan</option>
+                                    <option>IT15266373-Nipun Pavithra</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <label>Date Of Birth</label>
-                                <input type="date" id="dob" class="form-control form-control-user" id="exampleInputEmail">
+                                <label>Choose Teacher</label>
+                                <select class="form-control select2">
+                                    <option>IT17180276-Janith Sameera</option>
+                                    <option>IT16178266-Maduka Dilshan</option>
+                                    <option>IT15266373-Nipun Pavithra</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
-                                <label>NIC</label>
-                                <input type="text" id="nic" class="form-control form-control-user" id="exampleInputEmail" placeholder="NIC">
+                                <label>Year</label>
+                                <input type="number" class="form-control form-control-user" min="1900" max="2099" step="1" value="2020">
                             </div>
 
                             <div class="form-group">
-                                <label>Join Date</label>
-                                <input type="date" id="joinDate" class="form-control form-control-user" id="exampleInputEmail">
+                                <label>Grade</label>
+                                <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Grade">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Class</label>
+                                <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Class">
                             </div>
 
-                            <div class="card">
-
-                                <div class="card-body">
-                                    <h2 class="h3 mb-4 text-gray-800">Qualifications</h2>
-                                    <div class="form-group">
-                                        <label>Description</label>
-                                        <input type="text" id="description" class="form-control form-control-user" placeholder="Description">
-                                    </div>
-                                    <input type="button" onclick="addToQualificationTable(event)" class="btn btn-danger btn-user btn-block" id="addQualification" value="Add Qualification">
-                                    <br><br>
-                                    <table id="tblQualifications" class="table table-bordered table-striped">
-                                        <thead>
-											<tr>
-												<th>Teacher Name</th>
-                                               <th>Description</th>
-											</tr>
-										</thead>
-                                       
-                                        <tbody>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <br><br>
-                            <input type="submit" onclick="validateSubmit(event)" id="submitBtn" class="btn btn-primary btn-user btn-block" value="Save Teacher">
+                            <input type="submit" class="btn btn-primary btn-user btn-block" value="Save Student History">
                             <hr>
                         </form>
 
@@ -188,6 +169,8 @@
         <script src="../../js/sb-admin-2.min.js"></script>
         <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="../../plugins/select2/js/select2.full.min.js"></script>
-        <script src="../../js/custom/teachers/addTeacher.js"></script>
+        <script src="../../js/custom/validation.js"></script>
+        <script src="../../js/custom/students/studentHistory.js"></script>
+
     </body>
 </html>
