@@ -118,6 +118,7 @@
 											<tr>
 												<th>Teacher Name</th>
                                                <th>Description</th>
+                                               <th>Close</th>
 											</tr>
 										</thead>
                                        

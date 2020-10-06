@@ -110,6 +110,9 @@ const addRow = (id) => {
 		+ '<td class="td-input" >'
 		+ '<input type="text" id="description' + id + '" name="description' + id + '" class="form-control" readonly >'
 		+ '</td>'
+		+ '</td>'
+		+ '<td class="text-center" id="deleteRow' + id + '" onclick="removeFromTables(this.id);" ><span class="fas fa-window-close" style="color:red;cursor: pointer"></span>'
+		+ '</td>'
 		+ '</tr>');
 };
 
@@ -212,4 +215,8 @@ const clearForm = () => {
 	$("#tblQualifications > tbody").find("tr").remove();
 	$("#nextId").val("");
 	getMaxId();
+};
+
+const removeFromTables = (id) => {
+	$("#" + id).parent().remove();
 };
